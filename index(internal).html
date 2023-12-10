@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Document</title>
+</head>
+<body>
+    <h1>My Website</h1>
+
+    <!-- Create a website that should have ;
+    Label : Number
+    Input  
+    Button : CheckNumber
+
+    Functionality : Page should check if a number is even or odd
+    Alert Message : 10 is even number
+    Alert Message : 11 is odd number
+
+-->
+  <form action="">
+    <label>Number: </label>
+    <input id="input-box" type="text">
+    <input type="button" value="Check Number" onclick="isEven()">
+    <!-- WORKFLOW : user clicks on Check Number button
+    onclick attribute will be called 
+then it will trigger isEven function-->
+  </form>
+
+<!-- writting the code to check if the number is even or odd -->
+<script >
+// internal js
+// is Even function should be called ONLY WHEN USER CLICKS ON Check Number button 
+function isEven(){
+    /*
+    we have some document methods that we must use to get the elements
+    For example querySelector , getElementById(id), getElementByClass(class) ;
+   document.getElementById("input-box"); -> returns the matching element whose is "input-box" 
+    */
+    
+//const num=10;
+const targetElement= document.getElementById('input-box')
+console.log(`Target : ${targetElement}`)
+const num = document.getElementById('input-box').value;
+console.log(`Number : ${num}`)
+
+if(num==''){
+    alert(' please enter an integer number to check')
+   }
+if(num%2===0 &&num!=='' ){
+ alert(num +' is even')
+}
+if(num%2===1){
+ alert(num +' is odd')
+}
+if(num%2!==0 && num%2!==1){
+ alert(num +' is not an integer')
+}
+
+
+}
+
+
+</script>
+</body>
+</html>
